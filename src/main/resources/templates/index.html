@@ -1,0 +1,51 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电影</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<header>
+    <div class="inner">
+    <a class="logo">
+        <span>少数派</span></a>
+        <!----> <div class="console"><!---->
+        <!----> <a href="javascript:;">
+            <span class="icon i-write">
+            </span></a>
+        <!----> <form class="search-form">
+            <i class="icon i-search"></i>
+            <div><input type="text" placeholder="搜索"></div></form>
+        <span><div class="el-popover notice-popover" style="width: 310px; display: none;">
+            <!----><div class="el-tabs">
+            <div class="el-tabs__header">
+                <div class="el-tabs__nav-wrap">
+                    <div class="el-tabs__nav-scroll">
+                        <div class="el-tabs__nav">
+                            <div class="el-tabs__active-bar" style="width: 0px; transform: translateX(0px);"></div>
+                            <div class="el-tabs__item is-active">通知</div>
+                            <div class="el-tabs__item">
+                    关注
+    <!----></div><div class="el-tabs__item">
+                    订单
+    <!----></div></div></div></div></div><div class="el-tabs__content"><div class="el-tab-pane"><div class="scroll-wrapper"><div class="no-data">没有新的消息</div> </div> <footer><a href="/notice/system" class="">查看历史</a></footer></div> <div class="el-tab-pane" style="display: none;"> <div class="scroll-wrapper"><div class="no-data">没有新的动态</div> </div> <footer><a href="/notice/subscribe" class="">查看历史</a></footer></div> <div class="el-tab-pane" style="display: none;"> <div class="scroll-wrapper"><div class="no-data">没有新的动态</div> </div> <footer><a href="/notice/item" class="">查看历史</a></footer></div></div></div></div></span> <a href="javascript:;"><div class="el-badge" style="line-height: 1;"><span class="icon i-notice"></span><sup class="el-badge__content is-fixed is-dot" style="display: none;"></sup></div></a> <span></span> <div class="el-badge avatar-badge-wrap"><a href="/" class="avatar active"><img alt="雾岛" src="https://cdn.sspai.com/avatar/fbd7ad5440a3e72dc43236507b0d090b.?imageMogr2/quality/95/thumbnail/!60x60r/gravity/Center/crop/60x60" lazy="loaded" style="width: 30px; height: 30px;"></a><sup class="el-badge__content is-fixed is-dot" style="display: none;"></sup></div> </div> <h1><span style="display: none;"></span></h1></div></header>
+<h2>电影推荐</h2>
+<div class="container"><br/>
+    <div class="row">
+        <div class="col-sm-6 col-md-4" th:each="student:${studentList}">
+            <div class="thumbnail">
+                <img th:src="${student.pic}" th:width="200" th:high="200"/>
+                <div class="caption alert alert-success" th:align="center">
+                    <h3 th:text="${student.name}"/>
+                    上映日期：<h4 style="color: aqua" th:text="${student.age}"></h4>
+                    制片国家：<h4 style="color: aqua" th:text="${student.male}"></h4>
+                    类型：<h4 style="color: aqua" th:text="${student.studentNo}"></h4>
+                    别名：<h4 style="color: aqua" th:text="${student.school}"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
